@@ -7,8 +7,8 @@
 pkgbase=util-linux
 pkgname=(util-linux libutil-linux)
 _pkgmajor=2.30
-pkgver=${_pkgmajor}.1
-pkgrel=3
+pkgver=${_pkgmajor}.2
+pkgrel=2
 pkgdesc="Miscellaneous system utilities for Linux"
 url="https://www.kernel.org/pub/linux/utils/util-linux/"
 arch=('x86_64')
@@ -21,7 +21,7 @@ validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/${pkgbase}-$pkgver.tar.xz"
         pam-{login,common,su}
         'util-linux.sysusers')
-md5sums=('5e5ec141e775efe36f640e62f3f8cd0d'
+md5sums=('23a5dce0030144a42676b92310026bac'
          '4368b3f98abd8a32662e094c54e7f9b1'
          'a31374fef2cba0ca34dfc7078e2969e4'
          'fa85e5cce5d723275b14365ba71a8aad'
