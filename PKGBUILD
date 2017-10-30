@@ -6,22 +6,20 @@
 
 pkgbase=util-linux
 pkgname=(util-linux libutil-linux)
-_pkgmajor=2.30
-pkgver=${_pkgmajor}.2
+_pkgmajor=2.31
+pkgver=${_pkgmajor}
 pkgrel=2
 pkgdesc="Miscellaneous system utilities for Linux"
 url="https://www.kernel.org/pub/linux/utils/util-linux/"
 arch=('x86_64')
 makedepends=('python' 'libcap-ng')
-optdepends=('uuid-s6serv: uuid s6 service'
-			'uuid-runitserv: uuid runit service')
 license=('GPL2')
 options=('strip' 'debug')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/${pkgbase}-$pkgver.tar.xz"
         pam-{login,common,su}
         'util-linux.sysusers')
-md5sums=('23a5dce0030144a42676b92310026bac'
+md5sums=('5b6821c403c3cc6e7775f74df1882a20'
          '4368b3f98abd8a32662e094c54e7f9b1'
          'a31374fef2cba0ca34dfc7078e2969e4'
          'fa85e5cce5d723275b14365ba71a8aad'
@@ -53,9 +51,9 @@ build() {
 }
 
 package_util-linux() {
-  conflicts=('eject' 'zramctl')
-  provides=('eject' 'zramctl')
-  replaces=('zramctl')
+  conflicts=('eject' 'zramctl' 'rfkill')
+  provides=('eject' 'zramctl' 'rfkill')
+  replaces=('zramctl' 'rfkill')
   depends=('pam' 'shadow' 'coreutils' 'libutil-linux' 'eudev-obarun' 'libcap-ng')
   optdepends=('python: python bindings to libmount'
 			  'uuid-s6serv: uuid s6 service')
