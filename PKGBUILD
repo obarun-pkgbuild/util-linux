@@ -8,7 +8,7 @@ pkgbase=util-linux
 pkgname=(util-linux libutil-linux)
 _pkgmajor=2.31
 pkgver=${_pkgmajor}
-pkgrel=2
+pkgrel=3
 pkgdesc="Miscellaneous system utilities for Linux"
 url="https://www.kernel.org/pub/linux/utils/util-linux/"
 arch=('x86_64')
@@ -18,6 +18,7 @@ options=('strip' 'debug')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/${pkgbase}-$pkgver.tar.xz"
         pam-{login,common,su}
+        '60-rfkill.rules'
         'util-linux.sysusers')
 md5sums=('5b6821c403c3cc6e7775f74df1882a20'
          '4368b3f98abd8a32662e094c54e7f9b1'
@@ -91,6 +92,9 @@ package_util-linux() {
   ### install pacopts applysys
   install -Dm644 "$srcdir/util-linux.sysusers" \
 	"$pkgdir/usr/lib/sysusers.d/util-linux.conf"
+
+  install -Dm644 "$srcdir/60-rfkill.rules" \
+    "$pkgdir/usr/lib/udev/rules.d/60-rfkill.rules"
 }
 
 package_libutil-linux() {
