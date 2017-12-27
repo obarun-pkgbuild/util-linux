@@ -7,8 +7,8 @@
 pkgbase=util-linux
 pkgname=(util-linux libutil-linux)
 _pkgmajor=2.31
-pkgver=${_pkgmajor}
-pkgrel=3
+pkgver=${_pkgmajor}.1
+pkgrel=2
 pkgdesc="Miscellaneous system utilities for Linux"
 url="https://www.kernel.org/pub/linux/utils/util-linux/"
 arch=('x86_64')
@@ -20,11 +20,12 @@ source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/${pkgbase
         pam-{login,common,su}
         '60-rfkill.rules'
         'util-linux.sysusers')
-md5sums=('5b6821c403c3cc6e7775f74df1882a20'
-         '4368b3f98abd8a32662e094c54e7f9b1'
-         'a31374fef2cba0ca34dfc7078e2969e4'
-         'fa85e5cce5d723275b14365ba71a8aad'
-         'dfc9904f67ebc54bb347ca3cc430ef2b')
+sha256sums=('1a51b16fa9cd51d26ef9ab52d2f1de12403b810fc8252bf7d478df91b3cddf11'
+            '993a3096c2b113e6800f2abbd5d4233ebf1a97eef423990d3187d665d3490b92'
+            'fc6807842f92e9d3f792d6b64a0d5aad87995a279153ab228b1b2a64d9f32f20'
+            '51eac9c2a2f51ad3982bba35de9aac5510f1eeff432d2d63c6362e45d620afc0'
+            '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
+            '0abcfa0d8d5b48561ddcb663b14877d0d3ad7a04074c19d2232c95e25608e67a')
 validpgpkeys=('6DD4217456569BA711566AC7F06E8FDE7B45DAAC') # Eric Vidal
 
 
